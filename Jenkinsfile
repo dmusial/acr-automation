@@ -1,20 +1,31 @@
 pipeline {
     agent any
 
+    properties([
+        parameters([
+            string(name: 'imageName', defaultValue: '')
+        ])
+    ])
+
     stages {
-        stage('Build') {
+        stage('Follows stable tagging') {
             steps {
-                echo 'Building..'
+                echo 'Checking tagging..${params.imageName}'
             }
         }
-        stage('Test') {
+        stage('Based on standard image') {
             steps {
-                echo 'Testing..'
+                echo 'Validating base image..'
             }
         }
-        stage('Deploy') {
+        stage('Security compliant') {
             steps {
-                echo 'Deploying....'
+                echo 'Scanning....'
+            }
+        }
+        stage('Promote to production') {
+            steps {
+                echo 'Promoting....'
             }
         }
     }
