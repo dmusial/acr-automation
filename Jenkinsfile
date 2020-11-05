@@ -1,7 +1,9 @@
 pipeline {
     agent any
 
-    parameters([ string(name: 'imageName', description: '', defaultValue: '' )])
+    parameters {
+        string(name: 'imageName', description: '', defaultValue: '' )
+    }
 
     stages {
         stage('Follows stable tagging') {
