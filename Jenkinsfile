@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Follows stable tagging') {
             steps {
-                echo 'Checking tagging..${params.imageName}'
+                echo "Checking tagging...${params.imageName}"
             }
         }
         stage('Based on standard image') {
