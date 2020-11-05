@@ -1,8 +1,10 @@
 pipeline {
     agent any
 
-    parameters([
-        string(name: 'imageName', defaultValue: '')
+    properties([
+        parameters([
+            string(name: 'imageName', defaultValue: '')
+        ])
     ])
 
     stages {
